@@ -9,7 +9,9 @@ import org.testng.annotations.Test;
 
 import testframeworks.utilities.DataFileUtil;
 import testframeworks.utilities.DataProviderExternalClass;
+import testframeworks.utilities.ExcelUtil;
 import testframeworks.utilities.JsonUtil;
+import testframeworks.utilities.PropertyUtil;
 import testframeworks.utilities.XmlUtil;
 import testframeworks.utilities.YamlUtil;
 
@@ -20,7 +22,10 @@ public class DataDrivenTests {
 	final String profilesTxtFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "profiles.txt";
 	final String profilesCsvFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "profiles.csv";
 	final String xmlFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "users.xml";
+	final String propertyFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "config.properties";
+	final String excelFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "test-data.xlsx";
 
+	
 	
 	@BeforeTest
 	public void setup() {
@@ -115,7 +120,7 @@ public class DataDrivenTests {
 		System.out.println("password is: " + xmlUtil.getInfoFromXml("user", 1, "password"));
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void dataDrivenTestFromYamlFile() {
 		YamlUtil yamlUtil = new YamlUtil("properties");
 		
@@ -123,6 +128,16 @@ public class DataDrivenTests {
 		System.out.println("age is : " + yamlUtil.getItemFromYaml("age"));
 	}
 	
+	@Test(enabled = false)
+	public void dataDrivenTestFromPropertiesFile() {
+		PropertyUtil.loadPropertyFile(propertyFile);
+		System.out.println("database username is " + PropertyUtil.getValueFromPropertyFile("db.user"));
+	}
+	
+	@Test
+	public void dataDrivenTestFromExcelFile() {
+		ExcelUtil.readFromExcel(excelFile);
+	}
 
 	
 }
