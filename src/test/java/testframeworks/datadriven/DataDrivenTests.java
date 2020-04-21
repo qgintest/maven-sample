@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import testframeworks.utilities.DataFileUtil;
 import testframeworks.utilities.DataProviderExternalClass;
 import testframeworks.utilities.JsonUtil;
+import testframeworks.utilities.XmlUtil;
 
 public class DataDrivenTests {
  
@@ -17,6 +18,7 @@ public class DataDrivenTests {
 	final String credentialsFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "credentials.json";
 	final String profilesTxtFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "profiles.txt";
 	final String profilesCsvFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "profiles.csv";
+	final String xmlFile = System.getProperty("user.dir") + File.separator + "src"  + File.separator  + "test" + File.separator + "java"  + File.separator + "users.xml";
 
 	
 	@BeforeTest
@@ -91,7 +93,7 @@ public class DataDrivenTests {
 		System.out.println("Password: " + jsonUtil.getPassword());
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void dataDrivenTestFromTextFile() {
 		
 		DataFileUtil dataFileUtilTxt = new DataFileUtil('|', profilesTxtFile, 1);
@@ -100,6 +102,16 @@ public class DataDrivenTests {
 		System.out.println("Last Name: " + dataFileUtilTxt.getLastName());
 		System.out.println("Occupation: " + dataFileUtilTxt.getOccupation());
 		
+	}
+	
+	@Test(enabled = true)
+	public void dataDrivenTestFromXmlFile() {
+		XmlUtil xmlUtil = new XmlUtil(xmlFile);
+		
+		System.out.println("username is: " + xmlUtil.getInfoFromXml("user", 0, "username"));
+		System.out.println("password is: " + xmlUtil.getInfoFromXml("user", 0, "password"));
+		System.out.println("username is: " + xmlUtil.getInfoFromXml("user", 1, "username"));
+		System.out.println("password is: " + xmlUtil.getInfoFromXml("user", 1, "password"));
 	}
 	
 
