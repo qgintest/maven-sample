@@ -1,0 +1,4 @@
+First Name|Last Name|Occupation|Social|Payment Method
+Abe|Lincoln|president|111|visa
+The|Dude|chillin|222|amex
+John|Snow|King in the North|333|mastercard
