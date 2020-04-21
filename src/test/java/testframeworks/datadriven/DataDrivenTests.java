@@ -11,6 +11,7 @@ import testframeworks.utilities.DataFileUtil;
 import testframeworks.utilities.DataProviderExternalClass;
 import testframeworks.utilities.JsonUtil;
 import testframeworks.utilities.XmlUtil;
+import testframeworks.utilities.YamlUtil;
 
 public class DataDrivenTests {
  
@@ -104,7 +105,7 @@ public class DataDrivenTests {
 		
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void dataDrivenTestFromXmlFile() {
 		XmlUtil xmlUtil = new XmlUtil(xmlFile);
 		
@@ -112,6 +113,14 @@ public class DataDrivenTests {
 		System.out.println("password is: " + xmlUtil.getInfoFromXml("user", 0, "password"));
 		System.out.println("username is: " + xmlUtil.getInfoFromXml("user", 1, "username"));
 		System.out.println("password is: " + xmlUtil.getInfoFromXml("user", 1, "password"));
+	}
+	
+	@Test
+	public void dataDrivenTestFromYamlFile() {
+		YamlUtil yamlUtil = new YamlUtil("properties");
+		
+		System.out.println("username is: " + yamlUtil.getItemFromYaml("username"));
+		System.out.println("age is : " + yamlUtil.getItemFromYaml("age"));
 	}
 	
 

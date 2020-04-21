@@ -1,0 +1,28 @@
+#key-value pairs 
+username: aeendale 
+age: 21 
+ 
+#horizontal objects and arrays
+objects: {key: value, key: value, key: value}
+array: ['Apple', 'Orange', 'Strawberry', 'Mango']
+
+#Map with four entries
+name: Abe Lincoln
+age: 21
+address: 123 Tester avenue
+phone numbers:
+ - name: Home
+   number: 206-555-5138
+ - name: Work
+   number: 425-555-2306
+
+#Nested Keys
+development:
+  database: mysql-dev
+  adapter:  mysql
+  host:     localhost
+
+test:
+  database: mysql-test
+  adapter:  mysql
+  host:     localhost
