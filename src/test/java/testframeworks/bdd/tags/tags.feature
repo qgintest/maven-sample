@@ -1,19 +1,26 @@
-Feature: Gherkin basic Keywords Example 
+@RunMe
+Feature: Using Tags 
 #This is how background can be used to eliminate duplicate steps 
 
-Background: 
-   User navigates to Facebook 
-   Given I am on Facebook login page 
-
-#Scenario with AND 
-Scenario: 
-   When I enter username as "TOM"
-   And I enter password as "JERRY" 
-   Then Login should fail 
-
-#Scenario with BUT 
-Scenario: 
-   When I enter username as "TOM" 
-   And I enter password as "JERRY" 
-   Then Login should fail 
-   But Relogin option should be available
+Scenario: Not Tagged
+   Given user navigates to Facebook
+   When I enter Username as "broham" and Password as "lickity-split"
+   Then the user should be redirected to login retry
+ 
+@SmokeTest  
+Scenario: Tagged as Smoke Test
+   Given a method is called
+   #When I enter Username as "broham" and Password as "lickity-split"
+   #Then the user should be redirected to login retry
+   
+@RegressionTest  
+ Scenario: Tagged as Regression Test
+   Given a method is called
+   #When I enter Username as "broham" and Password as "lickity-split"
+   #Then the user should be redirected to login retry
+   
+@SmokeTest @RegressionTest   
+Scenario: Tagged as Smoke and Regression Test
+   Given a method is called
+   #When I enter Username as "broham" and Password as "lickity-split"
+   #Then the user should be redirected to login retry        
