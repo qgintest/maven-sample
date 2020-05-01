@@ -1,4 +1,4 @@
-package testframeworks.bdd.datatable;
+package techniques.bdd.datatable;
 
 import org.junit.runner.RunWith; 
 import cucumber.junit.Cucumber; 

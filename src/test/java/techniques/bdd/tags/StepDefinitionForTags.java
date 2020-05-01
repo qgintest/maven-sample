@@ -1,4 +1,4 @@
-package testframeworks.bdd.tags;
+package techniques.bdd.tags;
 
 import java.io.File;
 

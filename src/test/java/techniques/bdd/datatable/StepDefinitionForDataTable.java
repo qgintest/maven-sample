@@ -1,4 +1,4 @@
-package testframeworks.bdd.datatable;
+package techniques.bdd.datatable;
 
 import java.io.File;
 

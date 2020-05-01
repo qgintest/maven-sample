@@ -1,4 +1,4 @@
-package testframeworks.bdd.annotation;
+package techniques.bdd.annotation;
 
 import java.io.File;
 

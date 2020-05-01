@@ -1,4 +1,4 @@
-package testframeworks.bdd.annotation;
+package techniques.bdd.outline;
 
 import org.junit.runner.RunWith; 
 import cucumber.junit.Cucumber; 

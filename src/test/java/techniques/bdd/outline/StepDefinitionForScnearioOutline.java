@@ -1,4 +1,4 @@
-package testframeworks.bdd.outline;
+package techniques.bdd.outline;
 
 import java.io.File;
 

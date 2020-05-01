@@ -1,4 +1,4 @@
-package testframeworks.bdd.tags;
+package techniques.bdd.tags;
 
 import org.junit.runner.RunWith; 
 import cucumber.junit.Cucumber; 
